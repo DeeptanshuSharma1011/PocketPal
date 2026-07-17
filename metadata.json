@@ -1,0 +1,6 @@
+{
+  "name": "PocketPal",
+  "description": "A personal expense and budget management web application that helps users record income and expenses, manage monthly budgets, and track savings goals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
