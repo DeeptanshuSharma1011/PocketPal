@@ -1,9 +1,5 @@
 # 📱 PocketPal
 
-[![GitHub License](https://img.shields.io/github/license/deepusteam1011/PocketPal?style=flat-square&color=blue)](LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/deepusteam1011/PocketPal?style=flat-square)](https://github.com/deepusteam1011/PocketPal/stargazers)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
 PocketPal is a modern, production-grade full-stack personal finance, budget, and expense tracker web application. It enables users to record income/expenses, configure dynamic monthly budgets, monitor custom categories, execute automated recurring subscriptions, and visualize interactive financial trends.
 
 Designed with a robust, modular architectural model, PocketPal strictly separates business logic and implements industry-standard security features to demonstrate enterprise-ready software development.
