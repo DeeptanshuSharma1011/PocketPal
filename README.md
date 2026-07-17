@@ -322,10 +322,10 @@ Distributed under the MIT License. See `LICENSE` for more details.
 ## ✉️ Contact / Support
 
 * **Name**: Your Name
-* **GitHub**: [deepusteam1011](https://github.com/deepusteam1011)
-* **LinkedIn**: [LinkedIn Profile](https://linkedin.com/in/yourusername)
+* **GitHub**: [deepusteam1011]((https://github.com/DeeptanshuSharma1011))
+* **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/deeptanshu-sharma-5814672b2/)
 * **Email**: deepusteam1011@gmail.com
-* **Project Link**: [https://github.com/deepusteam1011/PocketPal](https://github.com/deepusteam1011/PocketPal)
+* **Project Link**: [https://github.com/deepusteam1011/PocketPal]((https://github.com/DeeptanshuSharma1011/PocketPal))
 
 If you found PocketPal helpful or liked its architectural structure, please consider giving the repository a **⭐ Star** on GitHub!
 
