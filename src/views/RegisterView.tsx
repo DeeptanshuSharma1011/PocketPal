@@ -45,7 +45,8 @@ export const RegisterView: React.FC = () => {
         options: {
           data: {
             name: name.trim()
-          }
+          },
+          emailRedirectTo: window.location.origin + "/login"
         }
       });
 

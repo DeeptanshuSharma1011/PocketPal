@@ -1,6 +1,7 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+import axios from "axios";
 import { UserRepository } from "../repositories/userRepository.js";
 import { RefreshTokenRepository } from "../repositories/refreshTokenRepository.js";
 import { ActivityLogRepository } from "../repositories/activityLogRepository.js";
@@ -177,14 +178,14 @@ export class AuthService {
     try {
       return jwt.verify(token, JWT_SECRET) as TokenPayload;
     } catch (err) {
-      let supabaseUrl = process.env.VITE_SUPABASE_URL || "";
-      const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY;
+      let supabaseUrl = (process.env.VITE_SUPABASE_URL || "").trim();
+      const supabaseAnonKey = (process.env.VITE_SUPABASE_ANON_KEY || "").trim();
 
-      // Clean the Supabase URL in case it has /rest/v1 suffix or trailing slashes
-      if (supabaseUrl.includes("/rest/v1")) {
-        supabaseUrl = supabaseUrl.replace("/rest/v1", "");
+      // Clean the Supabase URL in case it has /rest/v1 suffix or trailing slashes (case-insensitive check)
+      if (supabaseUrl.toLowerCase().includes("/rest/v1")) {
+        supabaseUrl = supabaseUrl.replace(/\/rest\/v1/i, "");
       }
-      if (supabaseUrl.endsWith("/")) {
+      while (supabaseUrl.endsWith("/")) {
         supabaseUrl = supabaseUrl.slice(0, -1);
       }
 
@@ -213,15 +214,17 @@ export class AuthService {
       }
 
       try {
-        const response = await fetch(`${supabaseUrl}/auth/v1/user`, {
+        const url = `${supabaseUrl}/auth/v1/user`;
+        const response = await axios.get(url, {
           headers: {
             "Authorization": `Bearer ${token}`,
             "apikey": supabaseAnonKey
-          }
+          },
+          timeout: 10000 // 10s timeout to prevent hanging requests
         });
 
         if (response.status === 200) {
-          const suUser = (await response.json()) as any;
+          const suUser = response.data;
           const email = suUser.email || "";
           const name = suUser.user_metadata?.name || email.split("@")[0] || "User";
 
@@ -236,8 +239,10 @@ export class AuthService {
             name: user.name
           };
         }
-      } catch (fetchErr) {
-        console.error("Error verifying token with Supabase:", fetchErr);
+      } catch (axiosErr: any) {
+        const status = axiosErr.response?.status;
+        const data = axiosErr.response?.data;
+        console.error(`[AuthService] Supabase token verification failed with status: ${status}. Response:`, data || axiosErr.message);
       }
 
       throw new Error("Invalid or expired access token");

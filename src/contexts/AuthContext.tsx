@@ -62,6 +62,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           api.defaults.headers.common["Authorization"] = `Bearer ${session.access_token}`;
           localStorage.setItem("pocketpal_user", JSON.stringify(mappedUser));
           localStorage.setItem("pocketpal_access_token", session.access_token);
+          if (session.refresh_token) {
+            localStorage.setItem("pocketpal_refresh_token", session.refresh_token);
+          }
         } else {
           localLogout();
         }
@@ -92,6 +95,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         api.defaults.headers.common["Authorization"] = `Bearer ${session.access_token}`;
         localStorage.setItem("pocketpal_user", JSON.stringify(mappedUser));
         localStorage.setItem("pocketpal_access_token", session.access_token);
+        if (session.refresh_token) {
+          localStorage.setItem("pocketpal_refresh_token", session.refresh_token);
+        }
       } else if (event === "SIGNED_OUT") {
         localLogout();
       }
