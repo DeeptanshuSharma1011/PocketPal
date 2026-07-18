@@ -222,18 +222,6 @@ export const LoginView: React.FC = () => {
           </button>
         </form>
 
-        {/* Demo Fast Login Trigger */}
-        <div className="pt-2">
-          <button
-            type="button"
-            onClick={handleDemoLogin}
-            className="w-full bg-teal-50 hover:bg-teal-100 text-teal-700 py-2.5 rounded-xl text-xs font-semibold border border-teal-100 transition-all flex items-center justify-center gap-2 cursor-pointer"
-          >
-            <Sparkles size={14} />
-            <span>Fast Demo Login (Seeded Records)</span>
-          </button>
-        </div>
-
         {/* Footer Nav Links */}
         <div className="text-center pt-2">
           <p className="text-xs text-slate-500">
@@ -243,12 +231,6 @@ export const LoginView: React.FC = () => {
             </Link>
           </p>
         </div>
-      </div>
-
-      {/* Connectivity Status Pillar */}
-      <div className="mt-6 flex items-center gap-2 text-xs text-slate-500 font-medium bg-white/65 border border-slate-200/50 py-1.5 px-3 rounded-full shadow-xs">
-        <Database size={12} className={isDbConnected ? "text-emerald-500" : "text-amber-500"} />
-        <span>System Mode: <strong>{isDbConnected ? "Live PostgreSQL" : "Local MockDB"}</strong></span>
       </div>
     </div>
   );

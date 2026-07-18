@@ -1,5 +1,9 @@
 # 📱 PocketPal
 
+[![GitHub License](https://img.shields.io/github/license/deepusteam1011/PocketPal?style=flat-square&color=blue)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/deepusteam1011/PocketPal?style=flat-square)](https://github.com/deepusteam1011/PocketPal/stargazers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
 PocketPal is a modern, production-grade full-stack personal finance, budget, and expense tracker web application. It enables users to record income/expenses, configure dynamic monthly budgets, monitor custom categories, execute automated recurring subscriptions, and visualize interactive financial trends.
 
 Designed with a robust, modular architectural model, PocketPal strictly separates business logic and implements industry-standard security features to demonstrate enterprise-ready software development.
@@ -321,11 +325,11 @@ Distributed under the MIT License. See `LICENSE` for more details.
 
 ## ✉️ Contact / Support
 
-* **Name**: Deeptanshu Sharma
-* **GitHub**: [GitHub](https://github.com/DeeptanshuSharma1011)
-* **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/deeptanshu-sharma-5814672b2/)
+* **Name**: Your Name
+* **GitHub**: [deepusteam1011](https://github.com/deepusteam1011)
+* **LinkedIn**: [LinkedIn Profile](https://linkedin.com/in/yourusername)
 * **Email**: deepusteam1011@gmail.com
-* **Project Link**: [PocketPal](https://github.com/DeeptanshuSharma1011/PocketPal)
+* **Project Link**: [https://github.com/deepusteam1011/PocketPal](https://github.com/deepusteam1011/PocketPal)
 
 If you found PocketPal helpful or liked its architectural structure, please consider giving the repository a **⭐ Star** on GitHub!
 
